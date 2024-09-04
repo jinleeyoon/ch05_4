@@ -10,12 +10,12 @@ const CreateListForm :FC<CreateListFormProps> = ({onCreateList}) => {
   const [value,setValue] = useState<string>(D.randomTitleText())
  
   const onChange = useCallback((e:ChangeEvent<HTMLInputElement>) =>{
-    setValue(()=>e.target.value)
+    setValue(()=> e.target.value)
   },[])
 
   const addList = useCallback(()=>{
     onCreateList(D.randomUUID(),value)
-    setValue(()=>D.randomTitleText())
+    setValue(()=> D.randomTitleText())
   },[value,onCreateList])
 
   return (
